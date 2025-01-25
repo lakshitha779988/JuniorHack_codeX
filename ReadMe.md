@@ -71,9 +71,12 @@ Installation
 Contribution
 
 Lakshitha --DataBase Creation/JDBC connector/Student Management/Hostel Management/Room Management
+
 Buddika  - DataBase Creation/Test case write/Allocation Management
+
 Tharushi  -- DataBase Creation/Test case write/Allocation Management
+
 Raveesha -- DataBase Creation/Test case write/include the README file/Allocation Management
 
   
-
+Test Cases ,Error Handling and Edge Cases are in as a pdf fiel.
