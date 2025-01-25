@@ -51,7 +51,7 @@ public class MainService {
                     studentManagementMenue();
                 }
                 case 3 -> {
-                    studentManagementMenue();
+                    roomAllocationMenue();
                 }
 
                 case 0 -> {
@@ -112,7 +112,7 @@ public class MainService {
                             System.out.println("HostelId \n" + u.getHostel_id() + "HostelName \n " + u.getHostel_name() + "Number Of Room \n " + u.getNum_of_rooms()));
                 }
                 case 4 -> {
-                    roomAllocationMenue();
+                    roomManagementMenue();
                 }
                 case 0 -> {
 
