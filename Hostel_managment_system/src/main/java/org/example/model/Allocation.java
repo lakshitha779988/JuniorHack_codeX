@@ -3,6 +3,9 @@ package org.example.model;
 public class Allocation {
     private int allocation_id;
 
+    private int student_id;
+    private int room_id;
+
     private String allocation_Date;
 
     public int getAllocation_id() {
@@ -14,6 +17,21 @@ public class Allocation {
     }
 
 
+    public int getStudentId() {
+        return student_id;
+    }
+
+    public void setStudentId(int studentId) {
+        this.student_id = studentId;
+    }
+
+    public int getRoomId() {
+        return room_id;
+    }
+
+    public void setRoomId(int roomId) {
+        this.room_id = roomId;
+    }
 
     public String getAllocation_Date() {
         return allocation_Date;

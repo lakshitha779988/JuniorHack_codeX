@@ -1,13 +1,33 @@
 package org.example.service;
 
+import org.example.dao.AllocationDao;
+import org.example.dao.HostelDao;
+import org.example.dao.RoomDao;
+import org.example.dao.StudentDao;
+import org.example.model.Hostel;
 import org.example.model.Student;
 
 import java.util.Scanner;
 
 public class MainService {
 
+    StudentDao studentDao = new StudentDao();
+    RoomDao roomDao = new RoomDao();
+    HostelDao hostelDao = new HostelDao();
+    AllocationDao allocationDao = new AllocationDao();
+
+
+    StudentService studentService = new StudentService(studentDao);
+    RoomService roomService = new RoomService(roomDao);
+    HostelService hostelService = new HostelService(hostelDao);
+    AllocationService allocationService = new AllocationService(allocationDao);
+
     Scanner scanner = new Scanner(System.in);
     public void cliMenuFunction() {
+
+
+
+
 
 
         System.out.println("Welcome to the Health Management Sysytem!");
@@ -54,13 +74,40 @@ public class MainService {
 
             switch (choice) {
                 case 1 -> {
-                   //logic can implemt here
+                    System.out.print("Enter hostel_name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter number of rooms: ");
+                    int num_of_room = scanner.nextInt();
+
+                    Hostel hostel = new Hostel();
+                    hostel.setHostel_name(name);
+                    hostel.setNum_of_rooms(num_of_room);
+                    hostelService.addHostel(hostel);
+
+                    System.out.println("student added successfully!");
                 }
                 case 2 -> {
-                    //logic can implemt here
+                    System.out.print("Enter hostel ID to update: ");
+                    int id = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline
+
+                    System.out.print("Enter new hostel Name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter new number of rooms: ");
+                    int num_of_rooms = scanner.nextInt();
+
+                    Hostel hostel = new Hostel();
+                    hostel.setHostel_id(id);
+                    hostel.setHostel_name(name);
+                    hostel.setNum_of_rooms(num_of_rooms);
+                    hostelService.updateHostel(hostel);
+
+                    System.out.println("student updated successfully!");
                 }
                 case 3 -> {
-                    //logic can implemt here
+                    System.out.println("students in the database:");
+                    hostelService.getAllHostel().forEach(u ->
+                            System.out.println(u.getHostel_id() + " " + u.getHostel_name() + " " + u.getNum_of_rooms()));
                 }
                 case 4 -> {
                     roomManagementMenue();

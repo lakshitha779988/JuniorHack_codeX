@@ -1,29 +1,27 @@
 package org.example.model;
 
 public class Room {
-    private String room_id;
+    private int room_id;
 
     private int room_num;
     private int capacity;
     private int avilable_capacity;
+    private int hostel_id;
 
-    public String getRoo_id() {
+
+
+
+    public int getRoom_id() {
         return room_id;
     }
 
-    public void setRoo_id(String room_id) {
-        this.room_id = room_id;
+    public int getHostelId() {
+        return hostel_id;
     }
 
-    public String getRoom_id() {
-        return room_id;
+    public void setHostelId(int hostelId) {
+        this.hostel_id = hostelId;
     }
-
-    public void setRoom_id(String room_id) {
-        this.room_id = room_id;
-    }
-
-
 
     public int getRoom_num() {
         return room_num;
