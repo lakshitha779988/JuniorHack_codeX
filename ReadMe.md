@@ -67,12 +67,13 @@ Installation
    git clone [https://github.com/your-username/hostel-management-system.git](https://github.com/lakshitha779988/JuniorHack_codeX.git)
 
 
-Example Screenshots
-Error Handling
-
 
 Contribution
 
+Lakshitha --DataBase Creation/JDBC connector/Student Management/Hostel Management/Room Management
+Buddika  - DataBase Creation/Test case write/Allocation Management
+Tharushi  -- DataBase Creation/Test case write/Allocation Management
+Raveesha -- DataBase Creation/Test case write/include the README file/Allocation Management
 
   
 
