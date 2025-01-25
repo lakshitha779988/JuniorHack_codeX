@@ -64,7 +64,8 @@ public class RoomDao{
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1,room.getRoom_num());
             ps.setInt(2,room.getCapacity());
-            ps.setInt(4,room.getAvilable_capacity());
+            ps.setInt(3,room.getAvilable_capacity());
+            ps.setInt(4,room.getRoom_id());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
