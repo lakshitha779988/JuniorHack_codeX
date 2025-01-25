@@ -18,7 +18,7 @@ public class StudentDao{
 
     //create
     public void addStudent(Student student){
-        String query = "INSERT INTO students (name,age,department) VALUES (?,?,?)";
+        String query = "INSERT INTO student (name,age,department) VALUES (?,?,?)";
 
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1,student.getName());
@@ -34,7 +34,7 @@ public class StudentDao{
     public List<Student> getAllStudents(){
         List<Student> students = new ArrayList<>();
 
-        String query = "SELECT * FROM students";
+        String query = "SELECT * FROM student";
         try(Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(query)){
 
@@ -58,7 +58,7 @@ public class StudentDao{
 
     //update
     public void updateStudents(Student student)  {
-        String query = "UPDATE students SET name = ? , age = ?, department= ? ,WHERE id = ?";
+        String query = "UPDATE student SET name = ? , age = ?, department= ? ,WHERE id = ?";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1,student.getName());
             ps.setInt(2,student.getAge());
@@ -75,7 +75,7 @@ public class StudentDao{
 
     //delete
     public void deleteStudent(int id){
-        String quary = "DELETE FROM students WHERE id = ?";
+        String quary = "DELETE FROM student WHERE id = ?";
         try(PreparedStatement ps = connection.prepareStatement(quary)){
             ps.setInt(1,id);
             ps.executeUpdate();
