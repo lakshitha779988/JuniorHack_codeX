@@ -58,7 +58,7 @@ public class StudentDao{
 
     //update
     public void updateStudents(Student student)  {
-        String query = "UPDATE student SET name = ? , age = ?, department= ? ,WHERE id = ?";
+        String query = "UPDATE student SET name = ? , age = ?, department= ? WHERE id = ?";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1,student.getName());
             ps.setInt(2,student.getAge());
