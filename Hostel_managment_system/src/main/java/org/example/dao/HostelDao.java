@@ -61,7 +61,7 @@ public class HostelDao{
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1,hostel.getHostel_name());
             ps.setInt(2,hostel.getNum_of_rooms());
-            ps.setInt(4,hostel.getHostel_id());
+            ps.setInt(3,hostel.getHostel_id());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

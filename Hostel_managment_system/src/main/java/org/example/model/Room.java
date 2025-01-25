@@ -15,6 +15,10 @@ public class Room {
         return room_id;
     }
 
+    public void setRoom_id(int room_id) {
+        this.room_id = room_id;
+    }
+
     public int getHostelId() {
         return hostel_id;
     }
