@@ -9,14 +9,16 @@ import java.util.List;
 
 public class RoomService {
 
-
+private HostelDao hostelDao;
     private RoomDao roomDao;
 
-    public RoomService(RoomDao roomDao) {
+    public RoomService(HostelDao hostelDao, RoomDao roomDao) {
+        this.hostelDao = hostelDao;
         this.roomDao = roomDao;
     }
 
     public void addRoom(Room room){
+
         roomDao.addRoom(room);
     }
 

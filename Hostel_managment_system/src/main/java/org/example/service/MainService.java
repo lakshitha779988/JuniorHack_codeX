@@ -20,7 +20,7 @@ public class MainService {
 
 
     StudentService studentService = new StudentService(studentDao);
-    RoomService roomService = new RoomService(roomDao);
+    RoomService roomService = new RoomService(hostelDao,roomDao);
     HostelService hostelService = new HostelService(hostelDao);
     AllocationService allocationService = new AllocationService(allocationDao);
 
@@ -32,7 +32,7 @@ public class MainService {
 
 
 
-        System.out.println("Welcome to the Health Management Sysytem!");
+        System.out.println("Welcome to the Hostel Management System!");
         while (true) {
             System.out.println("\nChoose an option:");
             System.out.println("1. Manage Hostel");
