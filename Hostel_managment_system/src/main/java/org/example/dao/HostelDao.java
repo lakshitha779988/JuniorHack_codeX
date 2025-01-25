@@ -41,7 +41,7 @@ public class HostelDao {
 
             while (rs.next()) {
                 Hostel hostel = new Hostel();
-                hostel.setHostel_id(rs.getInt("hostel_id"));
+                hostel.setHostel_id(rs.getInt("id"));
                 hostel.setHostel_name(rs.getString("hostel_name"));
                 hostel.setNum_of_rooms(rs.getInt("num_of_rooms"));
                 hostels.add(hostel);
@@ -80,13 +80,14 @@ public class HostelDao {
             throw new RuntimeException(e);
         }
     }
-}
+
 //
 //    public boolean checkavailble(int hostelId) {
 //        String query = "SELECT * FROM hostel WHERE id =?";
 //        boolean flag = false;
 //        try (Statement stmt = connection.createStatement();
 //             ResultSet rs = stmt.executeQuery(query)) {
+//
 //
 //            if (!rs.next()) {
 //                flag = false;
@@ -99,4 +100,5 @@ public class HostelDao {
 //        return flag;
 //
 //    }
-//}
+
+}
