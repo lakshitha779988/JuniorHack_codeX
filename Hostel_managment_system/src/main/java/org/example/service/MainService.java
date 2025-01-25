@@ -138,13 +138,48 @@ public Boolean studentManagementMenue(){
 
         switch (choice) {
             case 1 -> {
-                //logic can implemt here
+                System.out.print("Enter student_name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter student_age: ");
+                int age = scanner.nextInt();
+                System.out.print("Enter student_department: ");
+                String department = scanner.nextLine();
+
+                Student student = new Student();
+                student.setName(name);
+                student.setAge(age);
+                student.setDepartment(department);
+                studentService.addStudent(student);
+
+                System.out.println("student added successfully!");
             }
+
             case 2 -> {
-                //logic can implemt here
+                System.out.print("Enter student ID to update: ");
+                int id = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+
+                System.out.print("Enter new student Name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter student_age: ");
+                int age = scanner.nextInt();
+                System.out.print("Enter student_department: ");
+                String department = scanner.nextLine();
+
+                Student student = new Student();
+                student.setId(id);
+                student.setName(name);
+                student.setAge(age);
+                student.setDepartment(department);
+                studentService.updateStudent(student);
+
+
+                System.out.println("student updated successfully!");
             }
             case 3 -> {
-                //logic can implemt here
+                System.out.println("students in the database:");
+                studentService.getAllStudent().forEach(u ->
+                        System.out.println(u.getHostel_id() + " " + u.getHostel_name() + " " + u.getNum_of_rooms()));
             }
             case 4 -> {
                 //need to call function to room management
